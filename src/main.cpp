@@ -1065,10 +1065,42 @@ uint256 static GetOrphanRoot(const CBlockHeader* pblock)
 int64 static GetBlockValue(int nHeight, int64 nFees)
 {
     int64 nSubsidy = 77 * COIN;
-
-    // Subsidy is cut in half every 129600 blocks
-    nSubsidy >>= (nHeight / 129600); // Klondikecoin
-
+	
+	static const int HARDFORK_HEIGHT_1 = 84576;
+		
+	if(nHeight <= HARDFORK_HEIGHT_1)
+	{
+		nSubsidy = 77 * COIN;
+	}	
+	else if(nHeight > HARDFORK_HEIGHT_1)
+    {
+		if(nHeight < 127776)
+		{
+			nSubsidy = 16 * COIN;
+		}
+		else if(nHeight < 170976)
+		{
+			nSubsidy = 8 * COIN;
+		}
+		else if(nHeight < 2273376)
+		{
+			nSubsidy = 4 * COIN;
+		}
+		else if(nHeight < 3324576)
+		{
+			nSubsidy = 2 * COIN;
+		}
+		else if(nHeight < 4901376)
+		{
+			nSubsidy = 1 * COIN;
+		}
+		else if(nHeight < 5522934)
+		{
+			nSubsidy = 0.5 * COIN;
+		}
+		else nSubsidy = 0.2 * COIN;
+	}
+	
     return nSubsidy + nFees;
 }
 
