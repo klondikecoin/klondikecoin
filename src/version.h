@@ -25,13 +25,13 @@ extern const std::string CLIENT_DATE;
 // network protocol versioning
 //
 
-static const int PROTOCOL_VERSION = 70002;
+static const int PROTOCOL_VERSION = 70003;
 
 // intial proto version, to be increased after version/verack negotiation
 static const int INIT_PROTO_VERSION = 209;
 
 // disconnect from peers older than this proto version
-static const int MIN_PEER_PROTO_VERSION = 70002;
+static const int MIN_PEER_PROTO_VERSION = 70003;
 
 // nTime field added to CAddress, starting with this version;
 // if possible, avoid requesting addresses nodes older than this
@@ -46,5 +46,10 @@ static const int BIP0031_VERSION = 60000;
 
 // "mempool" command, enhanced "getdata" behavior starts with this version:
 static const int MEMPOOL_GD_VERSION = 60002;
+
+#define DISPLAY_VERSION_MAJOR       8
+#define DISPLAY_VERSION_MINOR       0
+#define DISPLAY_VERSION_REVISION    6
+#define DISPLAY_VERSION_BUILD       2
 
 #endif
