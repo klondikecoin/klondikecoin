@@ -1,4 +1,4 @@
-![Kloindike](http://i.imgur.com/19dc1hf.png)
+                                  ![Kloindike](http://i.imgur.com/19dc1hf.png)
 
 # Klondike Coin [KDC]
 http://ewww.klondikecoin.com
